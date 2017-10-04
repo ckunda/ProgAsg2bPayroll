@@ -1,0 +1,18 @@
+The following records were processed: 
+
+101 Marion Louise 40.00 13.00
+Emp ID: 101; Last Name: Marion; First Name: Louise; Hours: 40.0; Pay Rate: = 13.0; Gross Pay: = 520.0; Fed Tax: = 78.0; State Tax: = 0.0; SSI Tax: = 0.0; Net Pay: = 442.0
+
+102 Davidson Carl 38.00 8.75
+Emp ID: 102; Last Name: Davidson; First Name: Carl; Hours: 38.0; Pay Rate: = 8.75; Gross Pay: = 332.5; Fed Tax: = 49.875004; State Tax: = 0.0; SSI Tax: = 0.0; Net Pay: = 282.625
+
+103 Whittle Ed 25.50 11.50
+Emp ID: 103; Last Name: Whittle; First Name: Ed; Hours: 25.5; Pay Rate: = 11.5; Gross Pay: = 293.25; Fed Tax: = 43.987503; State Tax: = 0.0; SSI Tax: = 0.0; Net Pay: = 249.2625
+
+104 Doe John 46.50 17.00
+Emp ID: 104; Last Name: Doe; First Name: John; Hours: 46.5; Pay Rate: = 17.0; Gross Pay: = 845.75; Fed Tax: = 126.8625; State Tax: = 0.0; SSI Tax: = 0.0; Net Pay: = 718.8875
+
+105 Prentiss Paula 50.50 15.75
+Emp ID: 105; Last Name: Prentiss; First Name: Paula; Hours: 50.5; Pay Rate: = 15.75; Gross Pay: = 878.0625; Fed Tax: = 131.70938; State Tax: = 0.0; SSI Tax: = 0.0; Net Pay: = 746.35315
+
+Total records processed: 5 

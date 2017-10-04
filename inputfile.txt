@@ -1,0 +1,5 @@
+101 Marion Louise 13.00 40.00
+102 Davidson Carl 8.75 38.00
+103 Whittle Ed 11.50 25.50
+104 Doe John 17.00 46.50
+105 Prentiss Paula 15.75 50.50
