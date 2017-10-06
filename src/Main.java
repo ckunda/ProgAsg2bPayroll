@@ -56,7 +56,7 @@ public class Main {
 		
 		out.printf("The following records were processed: \n\n");
 		
-		// Create new Employees Object
+		// Create new empty Employees Object
 		Employees emps = new Employees();
 				
 		// Read the input and write the output log
@@ -108,25 +108,21 @@ public class Main {
 		EmployeeRecord erTotals = new EmployeeRecord();
 		
 		// Loop through Employees object, print detail, and accumulate totals	
-		int i = 0;
-		EmployeeRecord er = new EmployeeRecord();
-		do {
-			er = emps.iterate(i);
-			if (er != null) {
-				// Print Employee Detail 
-				String fullName = er.lastName + ", " + er.firstName;
-				report.printf("     %-20s %9.2f %9.2f %9.2f %9.2f %9.2f\n",
-						fullName, er.payRate, er.hours, er.grossPay, er.fedTax, er.netPay);
+		emps.start();
+		while(emps.hasNext()) {
+			EmployeeRecord er = emps.getNext();
+			// Print Employee Detail 
+			String fullName = er.lastName + ", " + er.firstName;
+			report.printf("     %-20s %9.2f %9.2f %9.2f %9.2f %9.2f\n",
+					fullName, er.payRate, er.hours, er.grossPay, er.fedTax, er.netPay);
 
-				// Accumulate Totals
-				erTotals.hours += er.hours;
-				erTotals.payRate += er.payRate;
-				erTotals.grossPay += er.grossPay;
-				erTotals.fedTax += er.fedTax;
-				erTotals.netPay += er.netPay;
-			}
-			i++;
-		} while (er != null);
+			// Accumulate Totals
+			erTotals.hours += er.hours;
+			erTotals.payRate += er.payRate;
+			erTotals.grossPay += er.grossPay;
+			erTotals.fedTax += er.fedTax;
+			erTotals.netPay += er.netPay;
+		}
 	
 		//   Print Report Totals
 		erTotals.lastName = "Totals";
@@ -135,7 +131,7 @@ public class Main {
 				erTotals.grossPay, erTotals.fedTax, erTotals.netPay);
 
 		//   Print Report Averages
-		i = totalRecords;
+		int i = totalRecords;
 		erTotals.lastName = "Averages";
 		report.printf("     %-20s %9.2f %9.2f %9.2f %9.2f %9.2f\n",
 				erTotals.lastName, erTotals.payRate/i, erTotals.hours/i,
@@ -157,6 +153,75 @@ public class Main {
 				new FileOutputStream("console_" + timeStamp + ".txt")));
 		System.out.println("Time Stamp of output: " + timeStamp + "\n");
 
+		/** Pseudocode (Test Script)
+		   Test all constructors of the Employee Record Class
+		      Create Employee Record object with default constructor (er)
+		      Print the Employee Record object er - Should all have blanks/zeros
+		      Create Employee Record object with parameterized constructor (er1)
+		      Print the Employee Record object er1 - Should have all the values
+		      Create Employee Record object with clone constructor (er1Dup)
+		      Print the cloned Employee Record object er1Dup
+		      Print the cloned object er1Dup - Should be same as object er1
+		      
+		   Test all constructors of the Employee Class
+		      Create Employee object with default constructor (e)
+		      Print the Employee object e - Should all have blanks/zeros
+		      Create Employee object with parameterized constructor (e1)
+		      Print the Employee object e1 - Should have all the values
+		      Create Employee object with clone constructor (e1Dup)
+		      Print the cloned Employee object er1Dup
+
+		   Test all other methods of the Employee Class
+		      Call Employee e1's calculate gross pay method
+		      Print the Employee object e1 - Should have the gross pay calculated
+		      Call Employee e1's calculate taxes method
+		      Print the Employee object e1 - Should have the taxes calculated
+		      Call Employee e1's calculate net pay method
+		      Print the Employee object e1 - Should have the net pay calculated
+		   
+		   Test all constructors of the Employees Class
+		      Create Employee object with default constructor (emps)
+		      Print the Employees object emps - Should be null
+		      Create Employee object with parameterized constructor (emps1)
+		      Print the Employees object emps1 - Should have all the values
+		      Create Employee object with parameterized constructor (emps2)
+		      Print the Employees object emps2 - Should have all the values
+		      Create Employee object with parameterized constructor (emps3)
+		      Print the Employees object emps3 - Should have all the values
+		   
+		   Test all other methods of the Employees Class
+		      Test 3 Add overloaded methods to emps Employee object
+		      Add 1 employee with all individual parameters (emp id 102)
+		      Print emps Employees Object - Should have 1 employee
+		      Add 1 employee with er Employee Record object
+		      Print emps Employees Object - Should have 2 employees
+		      Add 1 employee with e1 Employee object
+		      Print emps Employees Object - Should have 3 employees
+		      
+		      Test 2 delete overloaded methods
+		      Delete employee id 102
+		      Print emps Employees object - Should not have emp id 102
+		      Delete employee whose last name is 'Kunda'
+		      Print emps Employees object - Should not have first occurance
+		         of last name 'Kunda'
+		         
+		      Add six more employees to test additional methods
+		      Print emps Employees object - Should have 7 employees
+		      
+		      Test search method
+		      Search for emp id 101 - Should find it
+		      Search for emp id 102 - Should not find it
+		      Search for last name 'Kunda' - Should find first occurance
+		      Search for last name 'KUNDA' - Should find first occurance
+		      Search for last name 'titanic' - Should not find it
+		      
+		      Test sort method - Sort by Last Name
+		      Print emps Employees object - Should be in Last Name order
+		      
+		      Test Iterate methods: start(), hasNext(), and getNext()
+		      
+		 */
+		
 		System.out.println("EmployeeRecord Class Examples");
 		EmployeeRecord er = new EmployeeRecord();
 		System.out.println("\n1. Employee Record (default) er:\n" + er);
@@ -168,71 +233,85 @@ public class Main {
 		System.out.println("\nEmployee Class Examples");
 		Employee e = new Employee();
 		System.out.println("\n1. Employee (default) e:\n" + e.toString());
-		Employee e1 = new Employee(2, "Kunda", "Chakra", 40f, 9.99f, 0f);
-		System.out.println("\n2. Employee e1:\n" + e1.toString());
+		Employee e1 = new Employee(1, "Kunda", "Chakra", 40f, 9.99f, 0f);
+		System.out.println("\n2. Employee (parameterized) e1:\n" + e1.toString());
+		Employee e1Dup = new Employee(e1.e);
+		System.out.println("\n3. Employee (cloned) e1Dup:\n" + e1Dup.toString());
 		e1.calcGross();
-		System.out.println("\n3. Employee e1 Calculate Gross Pay:");
+		System.out.println("\n4. Employee e1 Calculate Gross Pay:");
 		System.out.println(e1.toString());
 		e1.calcTax();
-		System.out.println("\n4. Employee e1 Calculate Taxes:");
+		System.out.println("\n5. Employee e1 Calculate Taxes:");
 		System.out.println(e1.toString());
 		e1.calcNet();
-		System.out.println("\n5. Employee e1 Calculate Net Pay:");
+		System.out.println("\n6. Employee e1 Calculate Net Pay:");
 		System.out.println(e1.toString());
 		
 		System.out.println("\nEmployees Class Examples");
-		Employees emps = new Employees(101, "Kunda", "Chakra", 40f, 9.99f, 0f);
-		System.out.println("\n1. Employees:");
-		System.out.println("Added one employee to emps:");
+		Employees emps = new Employees();
+		System.out.println("\n1. Employees emps (empty object):");
 		System.out.println(emps.toString());
+		Employees emps2 = new Employees(101, "Kunda", "Chakra", 40f, 9.99f, 0f);
+		System.out.println("\n2. Employees emps2:");
+		System.out.println(emps2.toString());
+		Employees emps3 = new Employees(er1);
+		System.out.println("\n3. Employees emps3 (created with er1 Employee Record object):");
+		System.out.println(emps3.toString());
+		Employees emps4 = new Employees(e1);
+		System.out.println("\n4. Employees emps4 (created with e1 Employee object):");
+		System.out.println(emps4.toString());		
+		
+		System.out.println("\nTest three Add overloaded methods to emps employees object:");
+		System.out.println("\nemps object before adding:");
+		System.out.println(emps.toString());
+		
+		System.out.println("\n5. emps object after adding individual values:");
+		emps.add(102, "Five", "Jackson", 30f, 19.99f, 0f);
+		System.out.println(emps.toString());
+		
+		System.out.println("\n6. emps object after adding employee record er1:");
+		emps.add(er1);
+		System.out.println(emps.toString());
+		
+		System.out.println("\n7. emps object after adding employee e1:");
 		emps.add(e1);
-		System.out.println("\n2. Employees:");
-		System.out.println("Added one more employee to emps:");
 		System.out.println(emps.toString());
+		
+		System.out.println("\nTest two Delete overloaded methods from emps employees object:");
+
+		System.out.println("\n8. emps object after deleting employee ID 102:");
+		emps.delete(102);
+		System.out.println(emps.toString());
+
+		System.out.println("\n9. Delete Emp 'Kunda' (first occurance only)");
+		emps.delete("Kunda");
+		System.out.println(emps.toString());
+		
 		emps.add(103, "Five", "Jackson", 30f, 19.99f, 0f);
 		emps.add(104, "Showers", "April", 41f, 29.99f, 0f);
 		emps.add(105, "Forward", "March", 60f, 91.99f, 0f);
 		emps.add(106, "Rider", "Knight", 80f, 1.00f, 0f);
 		emps.add(107, "Moon", "Blue", 40f, 69.99f, 0f);
 		emps.add(108, "Oriented", "Object", 1f, 0.01f, 0f);
-		System.out.println("Added six more employee to emps:");
+		System.out.println("\n10. Added six more employees to emps:");
 		System.out.println(emps.toString());
 		
-		System.out.println("\n1. Search Emp ID 1: " + emps.search(1) + " (null means not found)");
-		System.out.println("2. Search Emp ID 2: " + emps.search(2));
-		System.out.println("3. Search Emp 'Kunda': " + emps.search("Kunda"));
-		System.out.println("4. Search Emp 'KUNDA': " + emps.search("KUNDA"));
-		System.out.println("5. Search Emp 'oriented': " + emps.search("oriented"));
-		System.out.println("6. Search Emp ID 106: " + emps.search(106));
-		System.out.println("7. Search Emp 'titanic': " + emps.search("titanic"));
-		
-		emps.delete(106);
-		System.out.println("\n8. Delete Emp ID 106");
-		System.out.println(emps.toString());
-		emps.delete(345);
-		System.out.println("\n9. Delete Emp ID 345");
-		System.out.println(emps.toString());
-		emps.delete("kunda");
-		System.out.println("\n10. Delete Emp 'kunda' (first occurance only)");
-		System.out.println(emps.toString());
-		emps.delete("kundax");
-		System.out.println("\n11. Delete Emp 'kunda' (first occurance only)");
-		System.out.println(emps.toString());
+		System.out.println("\n11. 1.Search Emp ID 1: " + emps.search(1));
+		System.out.println("  2. Search Emp ID 2: " + emps.search(2) + " (null means not found)");
+		System.out.println("  3. Search Emp 'Kunda': " + emps.search("Kunda"));
+		System.out.println("  4. Search Emp 'KUNDA': " + emps.search("KUNDA"));
+		System.out.println("  5. Search Emp 'oriented': " + emps.search("oriented"));
+		System.out.println("  7. Search Emp 'titanic': " + emps.search("titanic"));
 
 		emps.sort();
-		System.out.println("\n12. Sorted");
+		System.out.println("\n12. Sorted (see above number 10 - before sort)");
 		System.out.println(emps);
 		
-		System.out.println("\n13. Iterate");
-		int i = 0;
-		do {
-			er = emps.iterate(i);
-			if (er != null)
-				System.out.println("Employee Record er (" + i + "):\n" + er);
-			else
-				System.out.println("Employee Record  er (" + i + "): null\n");		
-			i++;
-		} while (er != null);
+		System.out.println("\n13. Iterate methods: start(), hasNext(), and getNext()");
+		emps.start();
+		while(emps.hasNext()) {
+			System.out.println(emps.getNext().toString());
+		}
 		
 		System.out.println("\nEnd of Tests.");
 		System.out.close();

@@ -29,9 +29,6 @@ public class Employees {
 			float h, float pr, float defr) {
 		emps = new ArrayList<Employee>();
 		Employee e = new Employee(eID, lName, fName, h, pr, defr);
-		e.calcGross();
-		e.calcTax();
-		e.calcNet();
 		emps.add(e);
 	}
 	/**
@@ -41,9 +38,6 @@ public class Employees {
 	public Employees(EmployeeRecord er) {
 		emps = new ArrayList<Employee>();
 		Employee e = new Employee(er);
-		e.calcGross();
-		e.calcTax();
-		e.calcNet();
 		emps.add(e);	
 	}
 	/**
@@ -52,9 +46,6 @@ public class Employees {
 	 */
 	public Employees(Employee e) {
 		emps = new ArrayList<Employee>();
-		e.calcGross();
-		e.calcTax();
-		e.calcNet();
 		emps.add(e);
 	}
 	/**
@@ -69,9 +60,6 @@ public class Employees {
 	public void add(int eID, String lName, String fName,
 			float h, float pr, float defr) {
 		Employee e = new Employee(eID, lName, fName, h, pr, defr);
-		e.calcGross();
-		e.calcTax();
-		e.calcNet();
 		emps.add(e);
 	}
 	/**
@@ -80,9 +68,6 @@ public class Employees {
 	 */
 	public void add(EmployeeRecord er) {
 		Employee e = new Employee(er);
-		e.calcGross();
-		e.calcTax();
-		e.calcNet();
 		emps.add(e);	
 	}
 	/**
@@ -90,9 +75,6 @@ public class Employees {
 	 * @param e Employee
 	 */
 	public void add(Employee e) {
-		e.calcGross();
-		e.calcTax();
-		e.calcNet();
 		emps.add(e);
 	}
 	/**
@@ -178,26 +160,28 @@ public class Employees {
 		emps.sort(Comparator.comparing(Employee::getLastName));
 	}
 	/**
-	 * Iterate through the employees
-	 * @param start
+	 * Start iteration by resetting the cursor to starting position
+	 */
+	public void start() {
+		// Set the cursor to the first employee record
+		empIter = START;
+	}
+	/**
+	 * Are there more Employees?
+	 * @return boolean Yes/No 
+	 */
+	public boolean hasNext() {
+		if (empIter < emps.size()) return true;
+		return false;
+	}
+	/**
+	 * Get next employee record from the cursor position
 	 * @return
 	 */
-	public EmployeeRecord iterate(int position) {
-		
-		// null if no employees or at end of the list
-		if (emps.isEmpty() || empIter >= emps.size()) return null;
-		
-		// Set starting position to 0 (first employee)
-		if (position == START) {
-			empIter = START;
-		}
-		// Get next employee
-		else {
-			empIter++;
-		}
+	public EmployeeRecord getNext() {
 		// Return employee if not at end of list
 		if (empIter < emps.size())
-			return emps.get(empIter).e;		
+			return emps.get(empIter++).e;		
 		else
 			return null;
 	}
