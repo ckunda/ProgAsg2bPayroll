@@ -1,0 +1,118 @@
+Time Stamp of output: 2017.10.07.17.24.38
+
+EmployeeRecord Class Examples
+
+1. Employee Record (default) er:
+Emp ID: 0; Last Name: ; First Name: ; Hours: 0.0; Pay Rate: = 0.0; Gross Pay: = 0.0; Fed Tax: = 0.0; State Tax: = 0.0; SSI Tax: = 0.0; Net Pay: = 0.0
+
+2. Employee Record (parameterized) er1:
+Emp ID: 2; Last Name: Kunda; First Name: Chakra; Hours: 40.0; Pay Rate: = 9.99; Gross Pay: = 0.0; Fed Tax: = 0.0; State Tax: = 0.0; SSI Tax: = 0.0; Net Pay: = 0.0
+
+3. Employee Record (clone) er1Dup:
+Emp ID: 2; Last Name: Kunda; First Name: Chakra; Hours: 40.0; Pay Rate: = 9.99; Gross Pay: = 0.0; Fed Tax: = 0.0; State Tax: = 0.0; SSI Tax: = 0.0; Net Pay: = 0.0
+
+Employee Class Examples
+
+1. Employee (default) e:
+Emp ID: 0; Last Name: ; First Name: ; Hours: 0.0; Pay Rate: = 0.0; Gross Pay: = 0.0; Fed Tax: = 0.0; State Tax: = 0.0; SSI Tax: = 0.0; Net Pay: = 0.0
+
+2. Employee (parameterized) e1:
+Emp ID: 1; Last Name: Kunda; First Name: Chakra; Hours: 40.0; Pay Rate: = 9.99; Gross Pay: = 0.0; Fed Tax: = 0.0; State Tax: = 0.0; SSI Tax: = 0.0; Net Pay: = 0.0
+
+3. Employee (cloned) e1Dup:
+Emp ID: 1; Last Name: Kunda; First Name: Chakra; Hours: 40.0; Pay Rate: = 9.99; Gross Pay: = 0.0; Fed Tax: = 0.0; State Tax: = 0.0; SSI Tax: = 0.0; Net Pay: = 0.0
+
+4. Employee e1 Calculate Gross Pay:
+Emp ID: 1; Last Name: Kunda; First Name: Chakra; Hours: 40.0; Pay Rate: = 9.99; Gross Pay: = 399.59998; Fed Tax: = 0.0; State Tax: = 0.0; SSI Tax: = 0.0; Net Pay: = 0.0
+
+5. Employee e1 Calculate Taxes:
+Emp ID: 1; Last Name: Kunda; First Name: Chakra; Hours: 40.0; Pay Rate: = 9.99; Gross Pay: = 399.59998; Fed Tax: = 59.94; State Tax: = 0.0; SSI Tax: = 0.0; Net Pay: = 0.0
+
+6. Employee e1 Calculate Net Pay:
+Emp ID: 1; Last Name: Kunda; First Name: Chakra; Hours: 40.0; Pay Rate: = 9.99; Gross Pay: = 399.59998; Fed Tax: = 59.94; State Tax: = 0.0; SSI Tax: = 0.0; Net Pay: = 339.65997
+
+Employees Class Examples
+
+1. Employees emps (empty object):
+null
+
+2. Employees emps2:
+Number of entries: 1
+Index 0: Emp ID: 101; Last Name: Kunda; First Name: Chakra; Hours: 40.0; Pay Rate: = 9.99; Gross Pay: = 0.0; Fed Tax: = 0.0; State Tax: = 0.0; SSI Tax: = 0.0; Net Pay: = 0.0
+
+3. Employees emps3 (created with er1 Employee Record object):
+Number of entries: 1
+Index 0: Emp ID: 2; Last Name: Kunda; First Name: Chakra; Hours: 40.0; Pay Rate: = 9.99; Gross Pay: = 0.0; Fed Tax: = 0.0; State Tax: = 0.0; SSI Tax: = 0.0; Net Pay: = 0.0
+
+4. Employees emps4 (created with e1 Employee object):
+Number of entries: 1
+Index 0: Emp ID: 1; Last Name: Kunda; First Name: Chakra; Hours: 40.0; Pay Rate: = 9.99; Gross Pay: = 399.59998; Fed Tax: = 59.94; State Tax: = 0.0; SSI Tax: = 0.0; Net Pay: = 339.65997
+
+Test three Add overloaded methods to emps employees object:
+
+emps object before adding:
+null
+
+5. emps object after adding individual values:
+Number of entries: 1
+Index 0: Emp ID: 102; Last Name: Five; First Name: Jackson; Hours: 30.0; Pay Rate: = 19.99; Gross Pay: = 0.0; Fed Tax: = 0.0; State Tax: = 0.0; SSI Tax: = 0.0; Net Pay: = 0.0
+
+6. emps object after adding employee record er1:
+Number of entries: 2
+Index 0: Emp ID: 102; Last Name: Five; First Name: Jackson; Hours: 30.0; Pay Rate: = 19.99; Gross Pay: = 0.0; Fed Tax: = 0.0; State Tax: = 0.0; SSI Tax: = 0.0; Net Pay: = 0.0
+Index 1: Emp ID: 2; Last Name: Kunda; First Name: Chakra; Hours: 40.0; Pay Rate: = 9.99; Gross Pay: = 0.0; Fed Tax: = 0.0; State Tax: = 0.0; SSI Tax: = 0.0; Net Pay: = 0.0
+
+7. emps object after adding employee e1:
+Number of entries: 3
+Index 0: Emp ID: 102; Last Name: Five; First Name: Jackson; Hours: 30.0; Pay Rate: = 19.99; Gross Pay: = 0.0; Fed Tax: = 0.0; State Tax: = 0.0; SSI Tax: = 0.0; Net Pay: = 0.0
+Index 1: Emp ID: 2; Last Name: Kunda; First Name: Chakra; Hours: 40.0; Pay Rate: = 9.99; Gross Pay: = 0.0; Fed Tax: = 0.0; State Tax: = 0.0; SSI Tax: = 0.0; Net Pay: = 0.0
+Index 2: Emp ID: 1; Last Name: Kunda; First Name: Chakra; Hours: 40.0; Pay Rate: = 9.99; Gross Pay: = 399.59998; Fed Tax: = 59.94; State Tax: = 0.0; SSI Tax: = 0.0; Net Pay: = 339.65997
+
+Test two Delete overloaded methods from emps employees object:
+
+8. emps object after deleting employee ID 102:
+Number of entries: 2
+Index 0: Emp ID: 2; Last Name: Kunda; First Name: Chakra; Hours: 40.0; Pay Rate: = 9.99; Gross Pay: = 0.0; Fed Tax: = 0.0; State Tax: = 0.0; SSI Tax: = 0.0; Net Pay: = 0.0
+Index 1: Emp ID: 1; Last Name: Kunda; First Name: Chakra; Hours: 40.0; Pay Rate: = 9.99; Gross Pay: = 399.59998; Fed Tax: = 59.94; State Tax: = 0.0; SSI Tax: = 0.0; Net Pay: = 339.65997
+
+9. Delete Emp 'Kunda' (first occurance only)
+Number of entries: 1
+Index 0: Emp ID: 1; Last Name: Kunda; First Name: Chakra; Hours: 40.0; Pay Rate: = 9.99; Gross Pay: = 399.59998; Fed Tax: = 59.94; State Tax: = 0.0; SSI Tax: = 0.0; Net Pay: = 339.65997
+
+10. Added six more employees to emps:
+Number of entries: 7
+Index 0: Emp ID: 1; Last Name: Kunda; First Name: Chakra; Hours: 40.0; Pay Rate: = 9.99; Gross Pay: = 399.59998; Fed Tax: = 59.94; State Tax: = 0.0; SSI Tax: = 0.0; Net Pay: = 339.65997
+Index 1: Emp ID: 103; Last Name: Five; First Name: Jackson; Hours: 30.0; Pay Rate: = 19.99; Gross Pay: = 0.0; Fed Tax: = 0.0; State Tax: = 0.0; SSI Tax: = 0.0; Net Pay: = 0.0
+Index 2: Emp ID: 104; Last Name: Showers; First Name: April; Hours: 41.0; Pay Rate: = 29.99; Gross Pay: = 0.0; Fed Tax: = 0.0; State Tax: = 0.0; SSI Tax: = 0.0; Net Pay: = 0.0
+Index 3: Emp ID: 105; Last Name: Forward; First Name: March; Hours: 60.0; Pay Rate: = 91.99; Gross Pay: = 0.0; Fed Tax: = 0.0; State Tax: = 0.0; SSI Tax: = 0.0; Net Pay: = 0.0
+Index 4: Emp ID: 106; Last Name: Rider; First Name: Knight; Hours: 80.0; Pay Rate: = 1.0; Gross Pay: = 0.0; Fed Tax: = 0.0; State Tax: = 0.0; SSI Tax: = 0.0; Net Pay: = 0.0
+Index 5: Emp ID: 107; Last Name: Moon; First Name: Blue; Hours: 40.0; Pay Rate: = 69.99; Gross Pay: = 0.0; Fed Tax: = 0.0; State Tax: = 0.0; SSI Tax: = 0.0; Net Pay: = 0.0
+Index 6: Emp ID: 108; Last Name: Oriented; First Name: Object; Hours: 1.0; Pay Rate: = 0.01; Gross Pay: = 0.0; Fed Tax: = 0.0; State Tax: = 0.0; SSI Tax: = 0.0; Net Pay: = 0.0
+
+11. 1.Search Emp ID 1: Emp ID: 1; Last Name: Kunda; First Name: Chakra; Hours: 40.0; Pay Rate: = 9.99; Gross Pay: = 399.59998; Fed Tax: = 59.94; State Tax: = 0.0; SSI Tax: = 0.0; Net Pay: = 339.65997
+  2. Search Emp ID 2: null (null means not found)
+  3. Search Emp 'Kunda': Emp ID: 1; Last Name: Kunda; First Name: Chakra; Hours: 40.0; Pay Rate: = 9.99; Gross Pay: = 399.59998; Fed Tax: = 59.94; State Tax: = 0.0; SSI Tax: = 0.0; Net Pay: = 339.65997
+  4. Search Emp 'KUNDA': Emp ID: 1; Last Name: Kunda; First Name: Chakra; Hours: 40.0; Pay Rate: = 9.99; Gross Pay: = 399.59998; Fed Tax: = 59.94; State Tax: = 0.0; SSI Tax: = 0.0; Net Pay: = 339.65997
+  5. Search Emp 'oriented': Emp ID: 108; Last Name: Oriented; First Name: Object; Hours: 1.0; Pay Rate: = 0.01; Gross Pay: = 0.0; Fed Tax: = 0.0; State Tax: = 0.0; SSI Tax: = 0.0; Net Pay: = 0.0
+  7. Search Emp 'titanic': null
+
+12. Sorted (see above number 10 - before sort)
+Number of entries: 7
+Index 0: Emp ID: 103; Last Name: Five; First Name: Jackson; Hours: 30.0; Pay Rate: = 19.99; Gross Pay: = 0.0; Fed Tax: = 0.0; State Tax: = 0.0; SSI Tax: = 0.0; Net Pay: = 0.0
+Index 1: Emp ID: 105; Last Name: Forward; First Name: March; Hours: 60.0; Pay Rate: = 91.99; Gross Pay: = 0.0; Fed Tax: = 0.0; State Tax: = 0.0; SSI Tax: = 0.0; Net Pay: = 0.0
+Index 2: Emp ID: 1; Last Name: Kunda; First Name: Chakra; Hours: 40.0; Pay Rate: = 9.99; Gross Pay: = 399.59998; Fed Tax: = 59.94; State Tax: = 0.0; SSI Tax: = 0.0; Net Pay: = 339.65997
+Index 3: Emp ID: 107; Last Name: Moon; First Name: Blue; Hours: 40.0; Pay Rate: = 69.99; Gross Pay: = 0.0; Fed Tax: = 0.0; State Tax: = 0.0; SSI Tax: = 0.0; Net Pay: = 0.0
+Index 4: Emp ID: 108; Last Name: Oriented; First Name: Object; Hours: 1.0; Pay Rate: = 0.01; Gross Pay: = 0.0; Fed Tax: = 0.0; State Tax: = 0.0; SSI Tax: = 0.0; Net Pay: = 0.0
+Index 5: Emp ID: 106; Last Name: Rider; First Name: Knight; Hours: 80.0; Pay Rate: = 1.0; Gross Pay: = 0.0; Fed Tax: = 0.0; State Tax: = 0.0; SSI Tax: = 0.0; Net Pay: = 0.0
+Index 6: Emp ID: 104; Last Name: Showers; First Name: April; Hours: 41.0; Pay Rate: = 29.99; Gross Pay: = 0.0; Fed Tax: = 0.0; State Tax: = 0.0; SSI Tax: = 0.0; Net Pay: = 0.0
+
+13. Iterate methods: start(), hasNext(), and getNext()
+Emp ID: 103; Last Name: Five; First Name: Jackson; Hours: 30.0; Pay Rate: = 19.99; Gross Pay: = 0.0; Fed Tax: = 0.0; State Tax: = 0.0; SSI Tax: = 0.0; Net Pay: = 0.0
+Emp ID: 105; Last Name: Forward; First Name: March; Hours: 60.0; Pay Rate: = 91.99; Gross Pay: = 0.0; Fed Tax: = 0.0; State Tax: = 0.0; SSI Tax: = 0.0; Net Pay: = 0.0
+Emp ID: 1; Last Name: Kunda; First Name: Chakra; Hours: 40.0; Pay Rate: = 9.99; Gross Pay: = 399.59998; Fed Tax: = 59.94; State Tax: = 0.0; SSI Tax: = 0.0; Net Pay: = 339.65997
+Emp ID: 107; Last Name: Moon; First Name: Blue; Hours: 40.0; Pay Rate: = 69.99; Gross Pay: = 0.0; Fed Tax: = 0.0; State Tax: = 0.0; SSI Tax: = 0.0; Net Pay: = 0.0
+Emp ID: 108; Last Name: Oriented; First Name: Object; Hours: 1.0; Pay Rate: = 0.01; Gross Pay: = 0.0; Fed Tax: = 0.0; State Tax: = 0.0; SSI Tax: = 0.0; Net Pay: = 0.0
+Emp ID: 106; Last Name: Rider; First Name: Knight; Hours: 80.0; Pay Rate: = 1.0; Gross Pay: = 0.0; Fed Tax: = 0.0; State Tax: = 0.0; SSI Tax: = 0.0; Net Pay: = 0.0
+Emp ID: 104; Last Name: Showers; First Name: April; Hours: 41.0; Pay Rate: = 29.99; Gross Pay: = 0.0; Fed Tax: = 0.0; State Tax: = 0.0; SSI Tax: = 0.0; Net Pay: = 0.0
+
+End of Tests.

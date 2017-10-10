@@ -32,6 +32,7 @@ public class EmployeeRecord {
 	}
 	/**
 	 * Parameterized constructor
+	 * @param eID Employee ID
 	 * @param lName Last Name
 	 * @param fName First Name
 	 * @param h Hours

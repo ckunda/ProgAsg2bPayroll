@@ -1,4 +1,4 @@
-Time Stamp of output: 2017.10.05.16.09.15
+Time Stamp of output: 2017.10.06.07.38.44
 
 EmployeeRecord Class Examples
 
@@ -79,7 +79,7 @@ Index 1: Emp ID: 1; Last Name: Kunda; First Name: Chakra; Hours: 40.0; Pay Rate:
 Number of entries: 1
 Index 0: Emp ID: 1; Last Name: Kunda; First Name: Chakra; Hours: 40.0; Pay Rate: = 9.99; Gross Pay: = 399.59998; Fed Tax: = 59.94; State Tax: = 0.0; SSI Tax: = 0.0; Net Pay: = 339.65997
 
-10. Added six more employee to emps:
+10. Added six more employees to emps:
 Number of entries: 7
 Index 0: Emp ID: 1; Last Name: Kunda; First Name: Chakra; Hours: 40.0; Pay Rate: = 9.99; Gross Pay: = 399.59998; Fed Tax: = 59.94; State Tax: = 0.0; SSI Tax: = 0.0; Net Pay: = 339.65997
 Index 1: Emp ID: 103; Last Name: Five; First Name: Jackson; Hours: 30.0; Pay Rate: = 19.99; Gross Pay: = 0.0; Fed Tax: = 0.0; State Tax: = 0.0; SSI Tax: = 0.0; Net Pay: = 0.0
@@ -96,7 +96,7 @@ Index 6: Emp ID: 108; Last Name: Oriented; First Name: Object; Hours: 1.0; Pay R
   5. Search Emp 'oriented': Emp ID: 108; Last Name: Oriented; First Name: Object; Hours: 1.0; Pay Rate: = 0.01; Gross Pay: = 0.0; Fed Tax: = 0.0; State Tax: = 0.0; SSI Tax: = 0.0; Net Pay: = 0.0
   7. Search Emp 'titanic': null
 
-12. Sorted (see above number 10 - before sort
+12. Sorted (see above number 10 - before sort)
 Number of entries: 7
 Index 0: Emp ID: 103; Last Name: Five; First Name: Jackson; Hours: 30.0; Pay Rate: = 19.99; Gross Pay: = 0.0; Fed Tax: = 0.0; State Tax: = 0.0; SSI Tax: = 0.0; Net Pay: = 0.0
 Index 1: Emp ID: 105; Last Name: Forward; First Name: March; Hours: 60.0; Pay Rate: = 91.99; Gross Pay: = 0.0; Fed Tax: = 0.0; State Tax: = 0.0; SSI Tax: = 0.0; Net Pay: = 0.0

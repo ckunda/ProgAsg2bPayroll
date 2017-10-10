@@ -14,6 +14,7 @@ public class Employee {
 	}
 	/**
 	 * Parameterized constructor
+	 * @param eID Employee ID
 	 * @param lName Last Name
 	 * @param fName First Name
 	 * @param h Hours
@@ -61,7 +62,7 @@ public class Employee {
 	}
 	/**
 	 * Returns Last Name
-	 * @return
+	 * @return Last Name
 	 */
 	public String getLastName() {
 		return e.lastName;

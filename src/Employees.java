@@ -176,7 +176,7 @@ public class Employees {
 	}
 	/**
 	 * Get next employee record from the cursor position
-	 * @return
+	 * @return Employee Record
 	 */
 	public EmployeeRecord getNext() {
 		// Return employee if not at end of list
